@@ -1,0 +1,134 @@
+:root {
+  color-scheme: light;
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --text: #0f172a;
+  --muted: #475569;
+  --accent: #2563eb;
+  --accent-soft: #dbeafe;
+  --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Segoe UI, Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.hero {
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  color: white;
+  padding: 2rem 1rem 3rem;
+}
+
+.nav {
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-size: 1.125rem;
+  margin: 0;
+}
+
+.button {
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  padding: 0.65rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.hero-content {
+  max-width: 980px;
+  margin: 2.5rem auto 0;
+}
+
+.hero-content h2 {
+  margin: 0;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+}
+
+.hero-content p {
+  color: #cbd5e1;
+  max-width: 650px;
+  line-height: 1.65;
+}
+
+main {
+  max-width: 980px;
+  margin: -1.5rem auto 0;
+  padding: 0 1rem 3rem;
+}
+
+.section {
+  background: var(--surface);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  padding: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.section h3 {
+  margin-top: 0;
+}
+
+.section p {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.8rem;
+}
+
+.project-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.9rem;
+  background: #fff;
+}
+
+.project-card h4 {
+  margin: 0 0 0.25rem;
+}
+
+.project-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.chip-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.chip-list li {
+  background: var(--accent-soft);
+  color: #1e3a8a;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 0 1rem 2rem;
+}
