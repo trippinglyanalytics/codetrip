@@ -1,26 +1,25 @@
-/* 
+const projects = [
+  {
+    name: 'Portfolio Deployment',
+    description: 'Containerized static app ready for cloud deployment.',
+  },
+  {
+    name: 'CI/CD Pipeline',
+    description: 'GitHub Actions workflow with automated build and test steps.',
+  },
+  {
+    name: 'API Integration Starter',
+    description: 'Scaffold ready for environment-based backend integration.',
+  },
+];
 
-Write a short program that prints each number from 1 to 100 on a new line. 
+const projectList = document.querySelector('#project-list');
 
-For each multiple of 3, print "Fizz" instead of the number. 
-
-For each multiple of 5, print "Buzz" instead of the number. 
-
-For numbers which are multiples of both 3 and 5, print "FizzBuzz" instead of the number.
-
-*/
-
-
-let count = 1;
-while (count <= 100) {
-  if ((count % 3 == 0) && (count % 5 ==0)) {
-   console.log("FuzzBuzz");
-  } else if (count % 3 == 0) {
-    console.log("Fizz");
-  } else if (count % 5 == 0) {
-    console.log("Buzz");
-  } else {
-    console.log(count);
-  }
-  count++;  
+for (const project of projects) {
+  const card = document.createElement('article');
+  card.className = 'project-card';
+  card.innerHTML = `<h4>${project.name}</h4><p>${project.description}</p>`;
+  projectList.appendChild(card);
 }
+
+document.querySelector('#year').textContent = new Date().getFullYear();

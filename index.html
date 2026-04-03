@@ -1,12 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>repl.it</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | Cloud Deployment Project</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h3>FizzBuzz with While Loop</h3>
+    <header class="hero">
+      <nav class="nav">
+        <h1 class="brand">Your Name</h1>
+        <a class="button" href="#projects">View Projects</a>
+      </nav>
+      <div class="hero-content">
+        <h2>Build → Test → Deploy → Deliver</h2>
+        <p>
+          Portfolio application prepared for cloud deployment and automated with
+          CI/CD.
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <section id="about" class="section">
+        <h3>About</h3>
+        <p>
+          I build practical web applications and ship them with a delivery-first
+          mindset: reliable builds, automated checks, and cloud-ready
+          deployment.
+        </p>
+      </section>
+
+      <section id="projects" class="section">
+        <h3>Projects</h3>
+        <div id="project-list" class="project-grid" aria-live="polite"></div>
+      </section>
+
+      <section id="skills" class="section">
+        <h3>Skills</h3>
+        <ul class="chip-list">
+          <li>JavaScript</li>
+          <li>Docker</li>
+          <li>GitHub Actions</li>
+          <li>Cloud Deployment</li>
+          <li>Testing & Automation</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> Your Name • Portfolio Deployment Demo</p>
+    </footer>
+
     <script src="script.js"></script>
   </body>
 </html>
