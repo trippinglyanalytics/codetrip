@@ -3,6 +3,9 @@
 CompTIA Data Systems Trivia Game
 A terminal-based, menu-driven quiz game for CompTIA Data Systems certification preparation.
 
+Requirements:
+- Python 3.6+ (uses f-strings and other modern Python features)
+
 Features:
 - Study Mode: See explanations after each question
 - Exam Mode: Graded quiz with final results
@@ -12,6 +15,13 @@ Features:
 """
 import random
 import sys
+
+# Verify Python version
+if sys.version_info < (3, 6):
+    print("Error: This game requires Python 3.6 or higher.")
+    print(f"You are running Python {sys.version_info.major}.{sys.version_info.minor}")
+    sys.exit(1)
+
 from question_bank import QUESTION_BANK, TOPICS, get_questions_by_topic
 from utils import (
     clear_screen, print_header, print_separator,
@@ -27,7 +37,7 @@ def main():
     print("\nThis game helps you prepare for the CompTIA Data Systems exam.")
     print("You can study with instant feedback or take practice exams.\n")
     
-    player_name = input("Enter your name: ").strip()
+    player_name = input("Enter your name: ").strip()[:50]  # Limit to 50 chars
     if not player_name:
         player_name = "Player"
     
@@ -108,7 +118,8 @@ def choose_topics(question_bank):
             wait_for_enter()
             return None
     except (ValueError, IndexError):
-        print("\nInvalid input. Using all topics.")
+        print("\nInvalid format. Please enter numbers separated by commas (e.g., 1,3,5).")
+        print("Using all topics for now.")
         wait_for_enter()
         return None
 
@@ -239,7 +250,7 @@ def show_summary(player_name, score, total, topic_results, missed_questions, mod
     clear_screen()
     print_header(f"Quiz Complete - {player_name}")
     
-    percentage = (score / total * 100) if total > 0 else 0
+    percentage = ((score / total) * 100) if total > 0 else 0
     
     print(f"Final Score: {score}/{total} ({percentage:.1f}%)")
     print_separator()

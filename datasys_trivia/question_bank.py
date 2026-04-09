@@ -322,6 +322,8 @@ QUESTION_BANK = [
 ]
 
 # Generate topics dynamically from question bank
+# Note: TOPICS is computed at module load time and assumes QUESTION_BANK is static
+# If QUESTION_BANK is modified at runtime, TOPICS will become stale
 TOPICS = sorted({q["topic"] for q in QUESTION_BANK})
 
 # Generate difficulties dynamically from question bank
