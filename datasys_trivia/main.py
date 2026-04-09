@@ -118,16 +118,17 @@ def get_number_of_questions():
     clear_screen()
     print_header("Number of Questions")
     
+    max_questions = len(QUESTION_BANK)
     while True:
         try:
-            num = input("How many questions would you like to answer? (1-35, or press ENTER for 5): ").strip()
+            num = input(f"How many questions would you like to answer? (1-{max_questions}, or press ENTER for 5): ").strip()
             if not num:
                 return 5
             num = int(num)
-            if 1 <= num <= 35:
+            if 1 <= num <= max_questions:
                 return num
             else:
-                print("Please enter a number between 1 and 35.")
+                print(f"Please enter a number between 1 and {max_questions}.")
         except ValueError:
             print("Invalid input. Please enter a valid number.")
 

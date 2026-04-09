@@ -1,7 +1,6 @@
 """
 Utility functions for CompTIA Data Systems Trivia game.
 """
-import sys
 
 
 def clear_screen():
